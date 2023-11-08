@@ -14,7 +14,7 @@
  {<<"jsx">>,{pkg,<<"jsx">>,<<"3.1.0">>},1},
  {<<"phoscon_control">>,
   {git,"https://github.com/joq62/phoscon_control.git",
-       {ref,"18f87e760a1d8c34e8ebcdfe1ca912359e70d4a6"}},
+       {ref,"bb459313b18b582ad5d484a8a48e634737c5648a"}},
   0},
  {<<"ranch">>,
   {git,"https://github.com/ninenines/ranch",

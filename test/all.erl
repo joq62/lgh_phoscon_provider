@@ -25,7 +25,7 @@
 %% --------------------------------------------------------------------
 start()->
    
-%    ok=dependent_apps:start(),
+    ok=dependent_apps:start(),
     ok=setup(),
     ok=test1(),
 
