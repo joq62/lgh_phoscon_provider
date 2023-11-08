@@ -12,6 +12,7 @@
 -module(all).      
  
 -export([start/0]).
+
 %% --------------------------------------------------------------------
 %% Include files
 %% --------------------------------------------------------------------
@@ -24,14 +25,14 @@
 %% --------------------------------------------------------------------
 start()->
    
+%    ok=dependent_apps:start(),
     ok=setup(),
+    ok=test1(),
 
-    
-       % dbetcd
-     
+
     io:format("Test OK !!! ~p~n",[?MODULE]),
-    timer:sleep(2000),
-   % init:stop(),
+    timer:sleep(3000),
+    init:stop(),
     ok.
 
 %% --------------------------------------------------------------------
@@ -39,18 +40,18 @@ start()->
 %% Description: Based on hosts.config file checks which hosts are avaible
 %% Returns: List({HostId,Ip,SshPort,Uid,Pwd}
 %% --------------------------------------------------------------------
-
+test1()->    
+    io:format("Start ~p~n",[{?MODULE,?FUNCTION_NAME}]),
+    
+    ok.
 %% --------------------------------------------------------------------
 %% Function: available_hosts()
 %% Description: Based on hosts.config file checks which hosts are avaible
 %% Returns: List({HostId,Ip,SshPort,Uid,Pwd}
 %% --------------------------------------------------------------------
-
-
 setup()->
     io:format("Start ~p~n",[{?MODULE,?FUNCTION_NAME}]),
-    ok=application:start(etcd_provider),
-    pong=etcd_provider:ping(),
-  %  pong=log:ping(),
-
+  
+    ok=application:start(lgh_phoscon_provider),
+    pong=lgh_phoscon_provider:ping(),
     ok.
